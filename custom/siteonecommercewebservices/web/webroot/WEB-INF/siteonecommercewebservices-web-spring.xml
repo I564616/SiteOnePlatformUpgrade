@@ -26,6 +26,7 @@
 	<!-- Uncomment to enable version v1 -->
 	<!-- <import resource="config/v1-web-spring.xml"/> -->
 	<import resource="config/v2-web-spring.xml"/>
+    <import resource="config/common/springmvc-servlet.xml"/>
 
 	<!-- don't change the order, it needs to be at the end -->
 	<import resource="config/common-web-spring.xml"/>
