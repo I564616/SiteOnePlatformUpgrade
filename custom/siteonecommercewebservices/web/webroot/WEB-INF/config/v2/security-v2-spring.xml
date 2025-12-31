@@ -26,7 +26,7 @@
 
 	<!-- Commerce Webservices V2-->
 	<http pattern="/**"
-	      access-decision-manager-ref="webSecurityAccessDecisionManager"
+          use-authorization-manager="true"
 	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant">
 
 		<anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS"/>
