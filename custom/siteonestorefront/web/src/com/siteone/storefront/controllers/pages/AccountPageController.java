@@ -187,7 +187,7 @@ import com.siteone.storefront.validator.SiteOneRequestAccountValidator;
 
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping("/**/my-account")
+@RequestMapping("/*/my-account")
 public class AccountPageController extends AbstractSearchPageController
 {
 	private static final String TEXT_ACCOUNT_ADDRESS_BOOK = "text.account.addressBook";

@@ -106,7 +106,7 @@ import com.siteone.core.constants.SiteoneCoreConstants;
  */
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping(value = "/**/c")
+@RequestMapping(value = "/*/c")
 public class CategoryPageController extends AbstractCategoryPageController
 {
 	private static final String PAGINATION_NUMBER_OF_RESULTS_COUNT = "pagination.number.results.count";

@@ -39,7 +39,7 @@ import com.siteone.storefront.title.SiteOnePageTitleResolver;
  */
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping(value = "/**/store")
+@RequestMapping(value = "/*/store")
 public class SiteOneStoreDetailsPageController extends AbstractSearchPageController
 {
 

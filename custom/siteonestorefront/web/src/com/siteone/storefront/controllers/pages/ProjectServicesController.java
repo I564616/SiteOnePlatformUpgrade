@@ -44,7 +44,7 @@ import com.siteone.storefront.forms.SiteOnePSDashboardForm;
  */
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping(value = "/**/projectservices")
+@RequestMapping(value = "/*/projectservices")
 public class ProjectServicesController extends AbstractSearchPageController
 {
 	private static final String PROJECT_SERVICES_CMS_PAGE = "projectservices";

@@ -67,7 +67,7 @@ import com.siteone.storefront.util.SiteOnePaymentInfoUtil;
  */
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping("/**/link-to-pay")
+@RequestMapping("/*/link-to-pay")
 public class LinkToPayController extends AbstractPageController
 {
 	private static final Logger LOG = Logger.getLogger(LinkToPayController.class);

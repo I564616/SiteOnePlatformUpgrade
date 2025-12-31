@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 31, 2025, 9:12:19 PM                    ---
+ * --- Generated at Dec 31, 2025, 10:23:08 PM                   ---
  * ----------------------------------------------------------------
  */
 package com.siteone.pimintegration.jalo;

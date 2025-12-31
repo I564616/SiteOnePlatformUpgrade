@@ -84,7 +84,7 @@ import com.siteone.storefront.forms.SiteOneStoreFinderForm;
 
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping(value = "/**/store-finder")
+@RequestMapping(value = "/*/store-finder")
 public class StoreLocatorPageController extends AbstractSearchPageController
 {
 	private static final Logger LOG = Logger.getLogger(StoreLocatorPageController.class);

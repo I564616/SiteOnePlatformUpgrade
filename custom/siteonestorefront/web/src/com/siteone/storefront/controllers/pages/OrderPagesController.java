@@ -98,7 +98,7 @@ import com.siteone.storefront.util.SiteoneXSSFilterUtil;
  */
 @Controller
 // FRAMEWORK_UPDATE - TODO - AntPathMatcher was replaced with PathPatternParser as the new default path parser in Spring 6. Adjust this path to the new matching rules or re-enable deprecated AntPathMatcher. Consult "Adapting to PathPatternParser new default URL Matcher" JDK21 Upgrade Step in SAP Help documentation.
-@RequestMapping("/**/my-account")
+@RequestMapping("/*/my-account")
 public class OrderPagesController extends AbstractSearchPageController
 {
 	private static final String UNIT_ID_PATH_VARIABLE_PATTERN = "{unitId:.*}";
