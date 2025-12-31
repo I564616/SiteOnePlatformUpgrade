@@ -41,7 +41,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<dependency>
 		<groupId>com.sun.xml.messaging.saaj</groupId>
 		<artifactId>saaj-impl</artifactId>
-		<version>1.5.0</version>
+		<version>3.0.4</version>
 			</dependency>
 			<dependency>
 		<groupId>jakarta.xml.ws</groupId>
@@ -60,11 +60,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<artifactId>stax-ex</artifactId>
 			<version>1.8.2</version>
 		</dependency>
-		<dependency>
-    		<groupId>org.owasp.esapi</groupId>
-    		<artifactId>esapi</artifactId>
-    		<version>2.2.2.0</version>
-		</dependency>
+        <dependency>
+            <groupId>org.owasp.esapi</groupId>
+            <artifactId>esapi</artifactId>
+            <version>2.7.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
@@ -77,7 +78,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<version>4.0.5</version>
 			<scope>runtime</scope>
 		</dependency>
-
-	</dependencies> 
+        <dependency>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+	</dependencies>
 
 </project>
