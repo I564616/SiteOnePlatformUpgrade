@@ -20,16 +20,21 @@
 	<!-- Swagger resources -->
 	<!-- <security:http pattern="/v2/#{configurationService.configuration.getProperty('springfox.documentation.swagger.v2.path')}" security="none"/>
 	<security:http pattern="/v2/*swagger*/**" security="none"/> -->
-	
-	<security:http pattern="/v2/swagger-ui*/**" security="none"/>
-    <security:http pattern="/v2/api-docs*/**" security="none"/> 
 
-	<!-- Commerce Webservices V2-->
+    <!-- JDK-21-Fix-Needed -->
+	<security:http pattern="/v2/swagger-ui/**" security="none"/>
+    <security:http pattern="/v2/api-docs/**" security="none"/>
+
+    <bean id="restAuthenticationEntryPoint"
+          class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+
+    <!-- Commerce Webservices V2-->
 	<http pattern="/**"
+          entry-point-ref="restAuthenticationEntryPoint"
           use-authorization-manager="true"
-	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant">
+	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant" use-expressions="true">
 
-		<anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS"/>
+		<anonymous username="anonymous" granted-authority="hasAuthority('ROLE_ANONYMOUS')"/>
 		<!--<session-management session-authentication-strategy-ref="fixation"/>-->
 
 		<intercept-url pattern="/**" requires-channel="https" access="permitAll()"/>
@@ -61,7 +66,7 @@
 <!--		<property name="exceptionRenderer" ref="oAuth2ExceptionRendererV2"/>-->
 <!--	</bean>-->
 
-	<bean id="oAuth2ExceptionRendererV2" parent="oAuth2ExceptionRenderer">
-		<property name="messageConverters" ref="messageConvertersV2"/>
-	</bean>
+<!--	<bean id="oAuth2ExceptionRendererV2" parent="oAuth2ExceptionRenderer">-->
+<!--		<property name="messageConverters" ref="messageConvertersV2"/>-->
+<!--	</bean>-->
 </beans>
