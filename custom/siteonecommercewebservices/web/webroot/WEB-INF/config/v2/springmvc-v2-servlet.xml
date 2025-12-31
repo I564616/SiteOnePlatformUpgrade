@@ -25,7 +25,9 @@
 		http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/cache
      	http://www.springframework.org/schema/cache/spring-cache.xsd">
-
+    <mvc:default-servlet-handler />
+    <alias name="defaultWsDateFormatter" alias="wsDateFormatter" />
+    <bean id="defaultWsDateFormatter" class="de.hybris.platform.ycommercewebservices.formatters.impl.DefaultWsDateFormatter" />
     <context:annotation-config/>
     <context:component-scan
             base-package="com.siteone.v2, com.siteone.auth, com.siteone.context, com.siteone.conv, com.siteone.errors, com.siteone.exceptions, com.siteone.filter, com.siteone.formatters, com.siteone.oauth2, com.siteone.resolver, com.siteone.util.ws, com.siteone.validator, com.siteone.xstream, de.hybris.platform.webservicescommons.mapping, de.hybris.platform.webservicescommons.swagger"
