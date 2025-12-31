@@ -72,7 +72,8 @@ public class SiteOneStorefrontAuthenticationSuccessHandler extends StorefrontAut
 
 
 		ESAPI.initialize("org.owasp.esapi.reference.DefaultSecurityConfiguration");
-		ESAPI.httpUtilities().setCurrentHTTP(request, response);
+        //JDK-21-Fix-Needed
+		//ESAPI.httpUtilities().setCurrentHTTP(request, response);
 		if(!getCustomerFacade().getCurrentCustomer().getUnit().isActive()) {
 			response.sendRedirect(newContextPath + "/");
 		}
@@ -93,7 +94,8 @@ public class SiteOneStorefrontAuthenticationSuccessHandler extends StorefrontAut
 			}
 			cookie.setValue(null);
 			cookie.setPath("/");
-			ESAPI.httpUtilities().addCookie(response, cookie);
+            //JDK-21-Fix-Needed
+			//ESAPI.httpUtilities().addCookie(response, cookie);
 			if (targetUrl.contains("cart"))
 			{
 				ESAPI.httpUtilities().sendRedirect(newContextPath + targetUrl);

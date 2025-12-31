@@ -93,7 +93,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.log4j.Logger;
-import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
+//import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.util.Assert;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientException;
@@ -1697,7 +1697,7 @@ public class DefaultSiteOneCustomerFacade extends DefaultCustomerFacade implemen
 
 	@Override
 	public String verifyRecoveryToken(final String token)
-			throws InvalidTokenException, ResourceAccessException, TokenInvalidatedException, IllegalArgumentException
+			throws  ResourceAccessException, TokenInvalidatedException, IllegalArgumentException
 	{
 
 		String stateToken = StringUtils.EMPTY;
@@ -1723,18 +1723,20 @@ public class DefaultSiteOneCustomerFacade extends DefaultCustomerFacade implemen
 			{
 				stateToken = response.getStateToken();
 			}
-		}
-		catch (final OktaInvalidTokenException oktaInvalidTokenException)
-		{
-			LOG.error(oktaInvalidTokenException);
-			throw new InvalidTokenException(oktaInvalidTokenException.getMessage());
-		}
+		} catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        //JDK-21-Fix-Needed
+//		catch (final OktaInvalidTokenException oktaInvalidTokenException)
+//		{
+//			LOG.error(oktaInvalidTokenException);
+//			throw new InvalidTokenException(oktaInvalidTokenException.getMessage());
+//		}
 		return stateToken;
 	}
 
 	@Override
-	public String resetPassword(final String token, final String newPassword) throws InvalidTokenException,
-			PasswordPolicyViolationException, ResourceAccessException, RecentlyUsedPasswordException, TokenInvalidatedException
+	public String resetPassword(final String token, final String newPassword) throws PasswordPolicyViolationException, ResourceAccessException, RecentlyUsedPasswordException, TokenInvalidatedException
 	{
 		try
 		{
@@ -1753,11 +1755,12 @@ public class DefaultSiteOneCustomerFacade extends DefaultCustomerFacade implemen
 			}
 			return response.getStatus();
 		}
-		catch (final OktaInvalidTokenException oktaInvalidTokenException)
-		{
-			LOG.error(oktaInvalidTokenException);
-			throw new InvalidTokenException(oktaInvalidTokenException.getMessage());
-		}
+        //JDK-21-Fix-Needed
+//		catch (final OktaInvalidTokenException oktaInvalidTokenException)
+//		{
+//			LOG.error(oktaInvalidTokenException);
+//			throw new InvalidTokenException(oktaInvalidTokenException.getMessage());
+//		}
 		catch (final OktaInvalidPasswordException oktaInvalidPasswordException)
 		{
 			LOG.error(oktaInvalidPasswordException);

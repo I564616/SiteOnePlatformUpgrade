@@ -65,7 +65,7 @@ import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.servicelayer.user.exceptions.PasswordPolicyViolationException;
 import de.hybris.platform.site.BaseSiteService;
 import de.hybris.platform.util.Config;
-import de.hybris.platform.webservicescommons.oauth2.token.dao.OAuthTokenDao;
+//import de.hybris.platform.webservicescommons.oauth2.token.dao.OAuthTokenDao;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -109,7 +109,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.log4j.Logger;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
+//import org.springframework.security.oauth2.common.OAuth2AccessToken;
 //import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -1330,7 +1330,8 @@ public class AccountPageController extends AbstractSearchPageController
 		try
 		{
 			final B2BCustomerModel customer = (B2BCustomerModel) b2bCustomerService.getCurrentB2BCustomer();
-			Collection<OAuth2AccessToken> accessTokenList=new ArrayList<>();
+            ////JDK-21-Fix-Needed
+//			Collection<OAuth2AccessToken> accessTokenList=new ArrayList<>();
 			if(null !=customer)
 			{
                 ////JDK-21-Fix-Needed

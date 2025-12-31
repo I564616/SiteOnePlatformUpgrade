@@ -17,11 +17,10 @@ import de.hybris.platform.assistedservicefacades.AssistedServiceFacade;
 import de.hybris.platform.assistedservicestorefront.controllers.cms.AssistedServiceComponentController;
 import de.hybris.platform.assistedservicestorefront.security.AssistedServiceAgentAuthoritiesManager;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 
 
 public class SiteoneAssistedServiceComponentController extends AssistedServiceComponentController {
@@ -34,7 +33,7 @@ public class SiteoneAssistedServiceComponentController extends AssistedServiceCo
     @Resource(name = "assistedServiceAgentAuthoritiesManager")
     private AssistedServiceAgentAuthoritiesManager authoritiesManager;
 
-    @RequestMapping(value = "/logoutasm", method = RequestMethod.POST)
+    @PostMapping("/logoutasm")
     public String logoutAssistedServiceAgent(final Model model, final HttpServletRequest request) {
         authoritiesManager.restoreInitialAuthorities();
         assistedServiceFacade.stopEmulateCustomer();

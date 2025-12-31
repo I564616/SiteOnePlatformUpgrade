@@ -26,7 +26,7 @@ import java.util.Map;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
+//import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientException;
 
@@ -123,9 +123,9 @@ public interface SiteOneCustomerFacade
 
 
 	String verifyRecoveryToken(String token)
-			throws InvalidTokenException, ResourceAccessException, TokenInvalidatedException, IllegalArgumentException;
+			throws  ResourceAccessException, TokenInvalidatedException, IllegalArgumentException;
 
-	String resetPassword(String stateToken, String newPassword) throws InvalidTokenException, PasswordPolicyViolationException,
+	String resetPassword(String stateToken, String newPassword) throws PasswordPolicyViolationException,
 			ResourceAccessException, RecentlyUsedPasswordException, TokenInvalidatedException;
 
 	String setPasswordForUser(String token, String password)
