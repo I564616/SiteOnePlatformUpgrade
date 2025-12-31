@@ -110,7 +110,7 @@ import org.apache.commons.lang3.BooleanUtils;
 import org.apache.log4j.Logger;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.token.TokenStore;
+//import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -416,9 +416,9 @@ public class AccountPageController extends AbstractSearchPageController
 
 	@Resource(name = "configurationService")
 	private ConfigurationService configurationService;
-
-	@Resource(name = "oauthTokenStore")
-	private TokenStore oauthTokenStore;
+////JDK-21-Fix-Needed
+//	@Resource(name = "oauthTokenStore")
+//	private TokenStore oauthTokenStore;
 
 
 	/**
@@ -1333,16 +1333,17 @@ public class AccountPageController extends AbstractSearchPageController
 			Collection<OAuth2AccessToken> accessTokenList=new ArrayList<>();
 			if(null !=customer)
 			{
-			accessTokenList=oauthTokenStore.findTokensByClientIdAndUserName(Config.getString("agro.ai.client.id", StringUtils.EMPTY),customer.getUid());
-			if(CollectionUtils.isNotEmpty(accessTokenList))
-			{
-				for(final OAuth2AccessToken token:accessTokenList)
-				{
-					getSessionService().setAttribute("refreshToken",token.getRefreshToken().getValue());
-					break;
-				}
-				
-			}
+                ////JDK-21-Fix-Needed
+//			accessTokenList=oauthTokenStore.findTokensByClientIdAndUserName(Config.getString("agro.ai.client.id", StringUtils.EMPTY),customer.getUid());
+//			if(CollectionUtils.isNotEmpty(accessTokenList))
+//			{
+//				for(final OAuth2AccessToken token:accessTokenList)
+//				{
+//					getSessionService().setAttribute("refreshToken",token.getRefreshToken().getValue());
+//					break;
+//				}
+//
+//			}
 			}
 		final JSONObject json = new JSONObject();
 		json.put("sessionToken", (String)getSessionService().getAttribute(SiteoneCoreConstants.OKTA_SESSION_TOKEN));
