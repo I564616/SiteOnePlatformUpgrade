@@ -393,4 +393,10 @@
 		<property name="primaryHierarchy" value="${sales.hierarchy.root.category}"/>
 		<property name="productAndCategoryHelper" ref="productAndCategoryHelper"/>
 	</bean>
+
+    <bean id="pathMatcher" class="org.springframework.util.AntPathMatcher" />
+
+    <mvc:annotation-driven>
+        <mvc:path-matching path-matcher="pathMatcher"/>
+    </mvc:annotation-driven>
 </beans>
