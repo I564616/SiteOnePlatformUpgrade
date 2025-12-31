@@ -164,6 +164,11 @@
 			<param-value>WEB-INF/config/common/springmvc-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <max-request-size>209715200</max-request-size>
+            <file-size-threshold>10485760</file-size-threshold>
+            <!-- Specified value is just an example. Adjust your configuration depending on the requirements -->
+        </multipart-config>
 	</servlet>
 
 	<servlet-mapping>
@@ -222,6 +227,11 @@
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <max-request-size>209715200</max-request-size>
+            <file-size-threshold>10485760</file-size-threshold>
+            <!-- Specified value is just an example. Adjust your configuration depending on the requirements -->
+        </multipart-config>
 	</servlet>
 
 	<servlet-mapping>

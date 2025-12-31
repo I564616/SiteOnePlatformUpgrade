@@ -195,6 +195,11 @@
 			<param-value></param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+
+        <multipart-config>
+            <max-request-size>2048000</max-request-size>
+            <!-- Specified value is just an example. Adjust your configuration depending on the requirements -->
+        </multipart-config>
 	</servlet>
 
 	<servlet-mapping>
