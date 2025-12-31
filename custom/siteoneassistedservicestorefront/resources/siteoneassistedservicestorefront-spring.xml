@@ -21,9 +21,11 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
            
-    <context:annotation-config/> 
+    <context:annotation-config/>
+    <import resource="classpath*:/assistedservicestorefront-spring.xml"/>
 
-	<bean id="siteoneassistedservicestorefrontCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
+
+    <bean id="siteoneassistedservicestorefrontCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
 		<property name="supportedChannels">
 			<list value-type="de.hybris.platform.commerceservices.enums.SiteChannel">
 				<value>B2C</value>
