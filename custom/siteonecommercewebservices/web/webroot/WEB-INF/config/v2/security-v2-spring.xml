@@ -42,7 +42,7 @@
 		</port-mappings>
 
 <!--		<custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER"/>-->
-		<access-denied-handler ref="oauthAccessDeniedHandlerV2"/>
+<!--		<access-denied-handler ref="oauthAccessDeniedHandlerV2"/>-->
 		
 		<headers >
 			<content-type-options />
@@ -57,9 +57,9 @@
 <!--		<property name="exceptionRenderer" ref="oAuth2ExceptionRendererV2"/>-->
 <!--	</bean>-->
 
-	<bean id="oauthAccessDeniedHandlerV2" parent="oauthAccessDeniedHandler">
-		<property name="exceptionRenderer" ref="oAuth2ExceptionRendererV2"/>
-	</bean>
+<!--	<bean id="oauthAccessDeniedHandlerV2" parent="oauthAccessDeniedHandler">-->
+<!--		<property name="exceptionRenderer" ref="oAuth2ExceptionRendererV2"/>-->
+<!--	</bean>-->
 
 	<bean id="oAuth2ExceptionRendererV2" parent="oAuth2ExceptionRenderer">
 		<property name="messageConverters" ref="messageConvertersV2"/>
