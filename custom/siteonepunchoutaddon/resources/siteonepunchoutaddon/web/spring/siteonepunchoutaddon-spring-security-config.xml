@@ -20,13 +20,13 @@
 		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<security:http pattern="${siteonepunchoutaddon.mapping.cxml.pattern}"  disable-url-rewriting="true" use-expressions="false" request-matcher="ant">
+	<security:http pattern="${siteonepunchoutaddon.mapping.cxml.pattern}"  disable-url-rewriting="true" use-expressions="false" request-matcher="ant" use-authorization-manager="false">
 	
 		<security:csrf disabled="true"/>
 	
 		<security:anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS"/>
 		
-		<security:intercept-url pattern="/**" requires-channel="https" access="permitAll()"/>
+		<security:intercept-url pattern="/**" requires-channel="https" access="PERMIT_ALL"/>
 		
 		<security:form-login
 				login-page="/login"
