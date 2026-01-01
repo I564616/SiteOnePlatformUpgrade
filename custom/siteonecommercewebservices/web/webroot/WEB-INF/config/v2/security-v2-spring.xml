@@ -31,13 +31,13 @@
     <!-- Commerce Webservices V2-->
 	<http pattern="/**"
           entry-point-ref="restAuthenticationEntryPoint"
-          use-authorization-manager="false"
-	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant" use-expressions="false">
+          use-authorization-manager="true"
+	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant" use-expressions="true">
 
-		<anonymous username="anonymous" granted-authority="hasAuthority('ROLE_ANONYMOUS')"/>
+		<anonymous username="anonymous" granted-authority="hasRole('ROLE_ANONYMOUS')"/>
 		<!--<session-management session-authentication-strategy-ref="fixation"/>-->
 
-		<intercept-url pattern="/**" requires-channel="https" access="PERMIT_ALL"/>
+		<intercept-url pattern="/**" requires-channel="https" access="permitAll()"/>
 
 		<port-mappings>
 			<port-mapping http="#{configurationService.configuration.getProperty('tomcat.http.port')}"
