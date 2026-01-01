@@ -178,7 +178,7 @@
 	</bean>
 
 	<bean id="autoLoginStrategy" class="com.siteone.storefront.security.impl.DefaultAutoLoginStrategy" >
-		<property name="authenticationManager" ref="authenticationManager" />
+<!--		<property name="authenticationManager" ref="authenticationManager" />-->
 		<property name="customerFacade" ref="customerFacade" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy"/>
 		<property name="rememberMeServices" ref="rememberMeServices"/>
