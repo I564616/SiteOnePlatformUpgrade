@@ -67,7 +67,7 @@
 		<ref bean="fileUploadFilter"/>
 
 		<!-- Security -->
-		<ref bean="springSecurityFilterChain"/>
+<!--		<ref bean="springSecurityFilterChain"/>-->
 		
 		<!-- filter to restore session store -->
 		<ref bean="sessionStoreRestorationFilter"/>

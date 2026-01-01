@@ -15,6 +15,10 @@
     <context:component-scan base-package="com.siteone.samlsso"/>
     <context:property-placeholder properties-ref="hybrisProperties"/>
 
+    <bean id="mvcHandlerMappingIntrospector"
+          class="org.springframework.web.servlet.handler.HandlerMappingIntrospector"/>
+
+
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
