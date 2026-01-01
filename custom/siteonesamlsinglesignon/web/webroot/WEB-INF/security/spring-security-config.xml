@@ -22,7 +22,7 @@
     <context:component-scan base-package="org.springframework.security.saml"/>
 
     <!-- Unsecured pages -->
-    
+
     <security:http security="none" pattern="/logout.jsp"/>
     <security:http security="none" pattern="/favicon.ico"/>
 
@@ -82,8 +82,8 @@
 <!--    <security:authentication-manager alias="authenticationManager">-->
 <!--        <security:authentication-provider ref="samlAuthenticationProvider"/>-->
 <!--    </security:authentication-manager>-->
-	
-	
+
+
     <!-- Logger for SAML messages and events -->
     <bean id="samlLogger" class="org.springframework.security.saml.log.SAMLDefaultLogger"/>
 

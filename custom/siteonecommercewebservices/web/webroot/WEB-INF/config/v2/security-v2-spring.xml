@@ -29,7 +29,7 @@
           class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
 
     <!-- Commerce Webservices V2-->
-	<http pattern="/**"
+	<security:http pattern="/**"
           entry-point-ref="restAuthenticationEntryPoint"
           use-authorization-manager="true"
 	      xmlns="http://www.springframework.org/schema/security" create-session="stateless" request-matcher="ant" use-expressions="true">
@@ -56,7 +56,7 @@
 			<security:frame-options disabled="true"/>
 		</headers>
 		<security:csrf disabled="true"/>
-	</http>
+	</security:http>
 
 <!--	<bean id="oauthAuthenticationEntryPointV2" parent="oauthAuthenticationEntryPoint">-->
 <!--		<property name="exceptionRenderer" ref="oAuth2ExceptionRendererV2"/>-->

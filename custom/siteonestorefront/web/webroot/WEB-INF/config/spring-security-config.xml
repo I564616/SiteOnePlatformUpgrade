@@ -14,7 +14,7 @@
 	   xmlns:security="http://www.springframework.org/schema/security"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:context="http://www.springframework.org/schema/context"
-			xmlns:util="http://www.springframework.org/schema/util"												  
+			xmlns:util="http://www.springframework.org/schema/util"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security
@@ -34,8 +34,8 @@
 	<security:http pattern="/checkout/**" request-matcher="ant" use-expressions="true" use-authorization-manager="true">
 		<security:anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS" />
 		<security:access-denied-handler error-page="/login"/>
-																				
-																   
+
+
 		<security:csrf token-repository-ref="csrfTokenRepository" request-matcher-ref="csrfProtectionMatcher" />
 		<security:custom-filter before="CSRF_FILTER" ref="logoutFilter" />
 <!--		<security:session-management session-authentication-strategy-ref="fixation" />-->
@@ -87,7 +87,7 @@
 	<security:http request-matcher-ref="excludeUrlRequestMatcher" request-matcher="ant" use-expressions="true" use-authorization-manager="true">
 		<security:anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS" />
 		<security:access-denied-handler ref="siteoneAccessDeniedHandler"/>
-																				
+
 		<security:csrf token-repository-ref="csrfTokenRepository" request-matcher-ref="csrfProtectionMatcher" />
 		<security:custom-filter before="CSRF_FILTER" ref="logoutFilter" />
 
@@ -140,8 +140,8 @@
 <!--	<security:authentication-manager alias="authenticationManager">-->
 <!--		<security:authentication-provider ref="acceleratorAuthenticationProvider" />-->
 <!--	</security:authentication-manager>-->
-	
-	<bean id="acceleratorAuthenticationProvider"
+
+    <bean id="acceleratorAuthenticationProvider"
 	class="com.siteone.storefront.security.AcceleratorAuthenticationProvider"
 	parent="coreAuthenticationProvider">
 	<property name="adminGroup" value="ROLE_ADMINGROUP" />
@@ -355,24 +355,24 @@
 	<bean id="rememberMeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider" >
 		<constructor-arg name="key" value="siteonestorefront"/>
 	</bean>
-	
+
 	<!-- CSRF -->
 	<bean id="csrfTokenRepository" class="org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository">
     	<property name="headerName" value="CSRFToken" />
     	<property name="parameterName" value="CSRFToken" />
 	</bean>
-	
+
 	<util:list id="csrfAllowedUrlPatternsList" />
-	
+
 	<alias name="defaultCsrfProtectionMatcher" alias="csrfProtectionMatcher"/>
 	<bean id="defaultCsrfProtectionMatcher" class="com.siteone.storefront.security.CsrfProtectionMatcher">
 		<property name="csrfAllowedUrlPatterns" ref="csrfAllowedUrlPatternsList"/>
 	</bean>
-	
+
 	<alias name="siteOneLogoutHandler" alias="logoutHandler"/>
 	<bean id="siteOneLogoutHandler" class="com.siteone.storefront.security.SiteOneSecurityContextLogoutHandler" />
-	
-		
+
+
 	<!-- <bean id="logoutFilter" class="org.acegisecurity.ui.logout.LogoutFilter"> -->
 	<alias name="siteonelogoutFilter" alias="logoutFilter"/>
 	<bean id="siteonelogoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter"  >
@@ -381,7 +381,7 @@
 			<list>
 				<ref bean="siteOneLogoutHandler" />
 				<ref bean="rememberMeServices"/>
-				
+
 			</list>
 		</constructor-arg>
 	</bean>

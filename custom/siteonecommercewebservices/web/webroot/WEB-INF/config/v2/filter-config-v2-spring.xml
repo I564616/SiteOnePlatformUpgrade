@@ -40,7 +40,7 @@
 		<ref bean="baseSiteMatchingFilter" />
 
 		<!-- Security -->
-		<ref bean="springSecurityFilterChain" />
+<!--		<ref bean="springSecurityFilterChain" />-->
 		<ref bean="userMatchingFilter" />
 
 		<!-- Anonymous Consents -->
