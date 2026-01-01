@@ -23,9 +23,9 @@
         http://www.springframework.org/schema/context/spring-context.xsd
 		  http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util.xsd">
-		
-		
 
+
+    <import resource="classpath*:resourceserver-commons-spring.xml"/>
 	<context:annotation-config/>
 
 	<security:http pattern="/_ui/**" security="none" />
@@ -178,7 +178,7 @@
 	</bean>
 
 	<bean id="autoLoginStrategy" class="com.siteone.storefront.security.impl.DefaultAutoLoginStrategy" >
-<!--		<property name="authenticationManager" ref="authenticationManager" />-->
+		<property name="authenticationManager" ref="authenticationManager" />
 		<property name="customerFacade" ref="customerFacade" />
 		<property name="guidCookieStrategy" ref="guidCookieStrategy"/>
 		<property name="rememberMeServices" ref="rememberMeServices"/>
