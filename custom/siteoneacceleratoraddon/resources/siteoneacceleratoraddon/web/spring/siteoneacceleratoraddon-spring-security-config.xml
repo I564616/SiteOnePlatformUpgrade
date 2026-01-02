@@ -24,9 +24,9 @@
 		http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-<!--	<security:authentication-manager alias="authenticationManager">-->
-<!--		<security:authentication-provider ref="b2bAcceleratorAuthenticationProvider"/>-->
-<!--	</security:authentication-manager>-->
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider ref="b2bAcceleratorAuthenticationProvider"/>
+	</security:authentication-manager>
 
 	<bean id="b2bAcceleratorAuthenticationProvider" parent="abstractAcceleratorAuthenticationProvider"
 		  class="de.hybris.platform.siteoneacceleratoraddon.security.B2BAcceleratorAuthenticationProvider">

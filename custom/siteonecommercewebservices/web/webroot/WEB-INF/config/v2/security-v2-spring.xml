@@ -16,7 +16,7 @@
 		http://www.springframework.org/schema/security 
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
-
+    <import resource="classpath*:resourceserver-commons-spring.xml"/>
 	<!-- Swagger resources -->
 	<!-- <security:http pattern="/v2/#{configurationService.configuration.getProperty('springfox.documentation.swagger.v2.path')}" security="none"/>
 	<security:http pattern="/v2/*swagger*/**" security="none"/> -->
