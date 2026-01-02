@@ -18,13 +18,13 @@
 	<display-name>siteonecommercewebservices</display-name>
 
 	<!-- spring based filter chain -->
-	<filter>
-		<description>
-			Spring configured chain of spring filter beans
-		</description>
-		<filter-name>commerceWebServicesFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
+<!--	<filter>-->
+<!--		<description>-->
+<!--			Spring configured chain of spring filter beans-->
+<!--		</description>-->
+<!--		<filter-name>commerceWebServicesFilterChain</filter-name>-->
+<!--		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+<!--	</filter>-->
 
 	<!-- provides support for ETag and If-None-Match, shallow -->
 	<filter>
@@ -43,8 +43,8 @@
 <!--	</filter>-->
 
     <filter>
-        <filter-name>httpPutFormFilter</filter-name>
-        <filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
+        <filter-name>httpFormFilter</filter-name>
+        <filter-class>org.springframework.web.filter.FormContentFilter</filter-class>
     </filter>
 
     <filter>
@@ -106,10 +106,10 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<filter-mapping>
-		<filter-name>commerceWebServicesFilterChain</filter-name>
-		<servlet-name>springmvc</servlet-name>
-	</filter-mapping>
+<!--	<filter-mapping>-->
+<!--		<filter-name>commerceWebServicesFilterChain</filter-name>-->
+<!--		<servlet-name>springmvc</servlet-name>-->
+<!--	</filter-mapping>-->
 
 	<!-- Uncomment to make v1 version available -->
 	
@@ -191,7 +191,7 @@
 	</filter>
 
 	<filter-mapping>
-		<filter-name>httpPutFormFilter</filter-name>
+		<filter-name>httpFormFilter</filter-name>
 		<servlet-name>springmvc-v2</servlet-name>
 	</filter-mapping>
 
